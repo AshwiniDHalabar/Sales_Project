@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <title>login page</title>
+
+        <link rel='stylesheet' href='{% static 'style.css' %}' type='text/css'>
+          
+    </head>
+    <body>
+        <h1>Login for Sales Representatives</h1>
+        <a href="login">Login</a><br>
+        <hr/>
+        <form action="login" method="post">
+            <h1>Login</h1>
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="username"><br><br>
+            <label for="Password">Password:</label>
+            <input type="password" name="password" placeholder="password"><br><br>
+            <input type="submit"><br>
+            <hr />
+        </form>
+
+    <div>
+                {% for message in messages %}
+                <h3> {{messages}} </h3>
+                {% endfor %}
+        </div>
+    </body>
+</html>

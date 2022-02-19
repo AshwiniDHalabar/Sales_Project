@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <title>register page</title>
+    </head>
+    <body>
+        <h1>Welcome to registration form</h1>
+        <form action="register" method="post">
+            <h1>Register Sales Representatives</h1>
+            {% csrf_token %}
+            <label for="first_name">first_name:</label>
+            <input type="text" name="firstname" placeholder="firstname"><br><br>
+            <label for="last_name">last_name:</label>
+            <input type="lastname" name="lastname" placeholder="lastname"><br><br>
+            <label for="email">email:</label>
+            <input type="email" name="email" placeholder="email"><br><br>
+            <label for="password">password:</label>
+            <input type="password" name="password" placeholder="password"><br><br>
+            <label for="confirmpassowrd">confirmpassowrd:</label>
+            <input type="confirmpassowrd" name="confirmpassowrde" placeholder="confirmpassowrd"><br><br>
+            <label for="phonenumber">phonenumber:</label>
+            <input type="tel" name="phonenumber" placeholder="phonenumber"><br><br>
+            <input type="submit"><br>
+            <hr />
+        </form>
+        {% if messages %}
+            {% for msg in messages %}
+            <b>{{msg}}</b>
+            {% endfor %}
+            {% endif %}
+            <hr/>
+            <em>If You Already a member <a href="">login</ahref></em>
+    </body>
+</html>
