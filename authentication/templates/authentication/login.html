@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-{%load static%}
-<html>
-    <head>
-        <meta charset = 'utf-8'>
-        <meta name='viewport' content="width=device-width, initial-scale=1">
-        <title>login page</title>
+{% extends "authentication/index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
 
-        <link rel='stylesheet' href='{% static 'style.css' %}' type='text/css'>
-          
-    </head>
-    <body>
-        <h1>Login for Sales Representatives</h1>
-        <a href="login">Login</a><br>
-        <hr/>
-        <form action="login" method="post">
-            <h1>Login</h1>
-            {% csrf_token %}
-            <label for="username">Username:</label>
-            <input type="text" name="username" placeholder="username"><br><br>
-            <label for="Password">Password:</label>
-            <input type="password" name="password" placeholder="password"><br><br>
-            <input type="submit"><br>
-            <hr />
-        </form>
-
-    <div>
-                {% for message in messages %}
-                <h3> {{messages}} </h3>
-                {% endfor %}
-        </div>
-    </body>
-</html>
+ <div class="content-section col-md-8 col-md-offset-2">
+  <center>
+  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      {{ form|crispy}}
+    </fieldset>
+    <center>
+    <label for="">Username</label>
+            <input type="text" id="first_name " name="first_name" placeholder="enter your first_name" Requires>
+            <br>
+    </center>
+  <br/>
+  <label for="">password</label>
+            <input type="password" id="password " name="password" placeholder="enter your password" Requires>
+            <br><br>
+            <button type="submit">log in</button>
+    </form>
+</center>
+ </div>
+{% endblock start %}

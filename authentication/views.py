@@ -25,12 +25,10 @@ def register(request):
 
 def login(request):
     if request.method == 'POST':
-        first_name = request.POST('first_name')
-        passowrd = request.POST('password',False)
+        first_name = request.POST.get('first_name')
+        passowrd = request.POST.get('password',False)
         return HttpResponse("<h4>login success</h4>")
 
     else:
         return render(request,'authentication/login.html')
 
-def abc(request):
-    pass
