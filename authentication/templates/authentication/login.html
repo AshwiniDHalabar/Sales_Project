@@ -4,21 +4,16 @@
 
  <div class="content-section col-md-8 col-md-offset-2">
   <center>
-  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+  <form method="POST" style="border: 3px solid black; margin: 1%; padding:1%; border:1px; background-color: #fff; background-image: linear-gradient(45deg, rgb(239,239));">
+    
     {% csrf_token %}
     <fieldset class="form-group">
       {{ form|crispy}}
     </fieldset>
     <center>
-    <label for="">Username</label>
-            <input type="text" id="first_name " name="first_name" placeholder="enter your first_name" Requires>
-            <br>
     </center>
   <br/>
-  <label for="">password</label>
-            <input type="password" id="password " name="password" placeholder="enter your password" Requires>
-            <br><br>
-            <button type="submit">log in</button>
+            <button type="submit"><b>log in</b></button>
     </form>
 </center>
  </div>

@@ -1,6 +1,12 @@
-h1{
-    color:blue;
-}
 body{
-    background-color: lightpink;
+    background-color: rgb(80, 80, 211);
+    background-image: linear-gradient(hsl(221, 69%, 48%) 10%,rgba(239,239,239,0) 30%,rgba(239,239,239,0) 75%,#efefef 80%,#efefef),linear-gradient(#efefef 25%,rgba(239,239,239,0) 25%,rgba(239,239,239,0) 75%,#efefef 75%,#efefef);
+    background-color: rgb(202, 200, 288);
+    background-position: 0 0,10px 10px;
+    background-size: 21px 21px;
+}
+
+
+    form{
+    background-color: rgb(187, 187, 187);
 }
