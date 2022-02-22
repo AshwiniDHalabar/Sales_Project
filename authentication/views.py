@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login as login_process
+from django.contrib.auth import login as login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm
 from django.core.mail import send_mail
@@ -11,13 +11,9 @@ from django.template.loader import get_template
 from django.template import Context
 
 
-##################################################################
-####################index#######################################
 def index(request):
     return render(request, 'authentication/index.html',{'title':'index'})
 
-########################################################################
-########### register here #####################################
 
 def register(request):
     if request.method == 'POST':
@@ -32,8 +28,7 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'authentication/register.html', {'form': form,'title':'reqister here'})
 
-###################################################################################
-################login forms###################################################
+
 
 def login(request):
     if request.method == 'POST':
@@ -44,7 +39,7 @@ def login(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            form = login(request,user)
+            form = login_required(request,user)
             messages.success(request, f' welcome {username} !!')
             return redirect('index')
         else:
