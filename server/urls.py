@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header= "Leads Management Platform"
+admin.site.site_title="leads management"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/',include('authentication.urls'))
