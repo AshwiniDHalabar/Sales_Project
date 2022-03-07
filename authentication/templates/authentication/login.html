@@ -2,6 +2,9 @@
 {% load crispy_forms_tags %}
 {% block start %}
 
+<link rel="stylesheet" href="static/view_all_emp.css" />
+
+<body class="login">
  <div class="content-section col-md-8 col-md-offset-2">
   <center>
   <form method="POST" style="border: 3px solid black; margin: 1%; padding:1%; border:1px; background-color: #fff; background-image: linear-gradient(45deg, rgb(239,239));">
@@ -11,6 +14,9 @@
       {{ form|crispy}}
     </fieldset>
     <center>
+      <body>
+      
+  </body>
     </center>
   <br/>
             <button type="submit"><b>log in</b></button>
@@ -18,3 +24,9 @@
 </center>
  </div>
 {% endblock start %}
+<body>
+<div class="container">
+  <hr>
+  <a class="btn btn-primary" href="all_emp" role="button">View All tasks</a>
+</body>
+</body>

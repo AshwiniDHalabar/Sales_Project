@@ -1,4 +1,4 @@
-body{
+body .login{
     background-color: #cccccc;
     background-image: url(a.jpeg);
     background-position: 0 0,10px 10px;
@@ -9,3 +9,10 @@ body{
     form{
     background-color: rgb(131, 179, 190);
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+

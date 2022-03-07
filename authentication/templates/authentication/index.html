@@ -11,12 +11,16 @@
   <meta name="language" content="English">
 
   <title>{{login}}</title>
+  <link rel="stylesheet" href="{% static 'static/authentication/images/style.css' %}">
+
+
 
 
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 
 
 
@@ -26,8 +30,7 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="{% static "style.css" %"}>
-
+  
 
   <!-- message here -->
 
@@ -72,24 +75,46 @@
             <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Sign up</a></li>
             <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> &nbsp; login</a></li>
             {% endif %}
-
-          </ul>
+          </div>
         </div>
+      </nav>
+      <div class=""header-container">
+            <div class="wrapper">
+              <header>
+                <div>
+                <div class ="hero-content"><br><br>
+                  <h1>Welcome to your<br>
+                    Dashboard</h1>
+                    <p>This is the homepage of lead <br>
+                    management system, login now to begin</p>
+                    <div class="hero-image">
+                      <img src="{% static 'authentication/images/image.png' %}">
+                      <div class="photo-bg"></div>
+                  </div>
+                  </div>
+                </div>
+              </header>
+
+            
+       
       </div>
-    </nav>
+    
   </header>
   <br/>
   <br>
   <br>
+
+  
   <div class="row">
     {% block start %}
     {% if user.is_authenticated %}
-    <center><h1><U><i>Welcome to Sales Management Dashboard</i></U></h1></center>
+    
     {% else %}
     <center><h1>log in, plz . . .</h1></center>
     {% endif %}
     {% endblock %}
   </div>
+  <script src="main.js"></script>
 </body>
 
 </html>

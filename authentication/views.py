@@ -9,6 +9,7 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
+from django.views.generic import TemplateView
 
 
 def index(request):
@@ -46,3 +47,9 @@ def login(request):
             messages.info(request, f'account does not exit plz sign in')
     form = AuthenticationForm()
     return render(request, 'authentication/login.html', {'form':form,'title':'log in'})
+
+
+
+def all_emp(request):
+    return render(request, 'authentication/view_all_emp.html')
+    
