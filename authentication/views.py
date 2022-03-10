@@ -42,7 +42,7 @@ def login(request):
         if user is not None:
             form = login_required(request,user)
             messages.success(request, f' welcome {username} !!')
-            return redirect('index')
+            return redirect('all_emp')
         else:
             messages.info(request, f'account does not exit plz sign in')
     form = AuthenticationForm()
@@ -53,3 +53,6 @@ def login(request):
 def all_emp(request):
     return render(request, 'authentication/view_all_emp.html')
     
+
+def hello(request):
+    return render(request, 'authentication/hello.html')
