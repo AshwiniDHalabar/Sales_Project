@@ -17,14 +17,18 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static 
 from django.contrib import admin
+from authentication.admin import blog_site
 from django.urls import path, include
+
 
 admin.site.site_header= "Leads Management Platform"
 admin.site.site_title="leads management"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authentication/',include('authentication.urls'))
+    path('authentication/',include('authentication.urls')),
+    path('blogadmin/', blog_site.urls)
+    
 ]
 
 
